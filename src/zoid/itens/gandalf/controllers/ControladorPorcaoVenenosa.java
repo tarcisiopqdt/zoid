@@ -12,7 +12,7 @@ import zoid.itens.gandalf.models.ModelIPorcaoVenenosa;
 
 public class ControladorPorcaoVenenosa {
     private JFrameiItemsMagicos viewItems;
-    private ControlllerBancoPorcaoVenenosa bancoGANDALF;
+    private ControllerBancoPorcaoVenenosa bancoGANDALF;
         
     public void executar(){
         viewItems = new JFrameiItemsMagicos();
@@ -21,7 +21,7 @@ public class ControladorPorcaoVenenosa {
         viewItems.addInsereBancoListener(new InsereBancoListener());
         viewItems.setVisible(true);
         
-        bancoGANDALF = new ControlllerBancoPorcaoVenenosa();
+        bancoGANDALF = new ControllerBancoPorcaoVenenosa();
     };
 
     public class InsereListener implements ActionListener{
@@ -35,7 +35,7 @@ public class ControladorPorcaoVenenosa {
     public class LeBancoListener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            viewItems.limpaLista();
+            viewItems.listaClean();
             ArrayList<ModelIPorcaoVenenosa> lista = bancoGANDALF.lerBanco();
             Iterator<ModelIPorcaoVenenosa> it = lista.iterator();
             while(it.hasNext()){

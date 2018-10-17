@@ -12,7 +12,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-public class ControlllerBancoPorcaoVenenosa {
+public class ControllerBancoPorcaoVenenosa {
 
     // link de conexao com o banco
     private String URL_DB = "jdbc:derby://localhost:1527/GANDALF";
@@ -25,7 +25,7 @@ public class ControlllerBancoPorcaoVenenosa {
     private Connection conexaoDB;
 
     // Construtor que faz a conexao com o banco 
-    public ControlllerBancoPorcaoVenenosa() {
+    public ControllerBancoPorcaoVenenosa() {
         try {
             conexaoDB = DriverManager.getConnection(URL_DB, "TARCISIOPQDT", "PQDT");
         } catch (Exception e) {

@@ -7,11 +7,11 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import zoid.itens.gandalf.models.ModelEspadaFogo;
 import zoid.itens.gandalf.views.JFrameiItemsMagicos;
-import zoid.itens.gandalf.models.ModelIPorcaoVenenosa;
+
 
 public class ControladorEspadaFogo {
     private JFrameiItemsMagicos viewItems;
-    private ControlllerBancoPorcaoVenenosa bancoGANDALF;
+    private ControllerBancoEspada bancoGANDALF;
         
     public void executar(){
         viewItems = new JFrameiItemsMagicos();
@@ -20,7 +20,7 @@ public class ControladorEspadaFogo {
         viewItems.addInsereBancoListener(new InsereBancoListener());
         viewItems.setVisible(true);
 
-        bancoGANDALF = new ControlllerBancoPorcaoVenenosa();
+        bancoGANDALF = new ControllerBancoEspada();
     };
 
     public class InsereListener implements ActionListener{
@@ -34,20 +34,21 @@ public class ControladorEspadaFogo {
     public class LeBancoListener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            viewItems.limpaLista();
-            ArrayList<ModelIPorcaoVenenosa> lista = bancoGANDALF.lerBanco();
-            Iterator<ModelIPorcaoVenenosa> it = lista.iterator();
+            viewItems.listaClean();
+            ArrayList<ModelEspadaFogo> lista = bancoGANDALF.lerBanco();
+            Iterator<ModelEspadaFogo> it = lista.iterator();
             while(it.hasNext()){
-                ModelIPorcaoVenenosa a = it.next();
-                viewItems.inserePorcaoLista(a);
+                ModelEspadaFogo a = it.next();
+                viewItems.insereEspadaLista(a);
             } 
         }        
     }
+   
     public class InsereBancoListener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-           ModelIPorcaoVenenosa a = viewItems.obterDadosPorcao();       
-           bancoGANDALF.inserirBanco(a);         
+           ModelEspadaFogo as = viewItems.obterDadosEspada();       
+           bancoGANDALF.inserirBanco(as);         
         }        
     }
 }
