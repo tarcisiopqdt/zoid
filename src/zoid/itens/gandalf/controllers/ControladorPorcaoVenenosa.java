@@ -6,16 +6,15 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Iterator;
 import zoid.itens.gandalf.models.ModelIPorcaoVenenosa;
-import zoid.itens.gandalf.views.JFrameiItemsMagicos;
-import zoid.itens.gandalf.views.JFrameiItemsMagicos;
 import zoid.itens.gandalf.models.ModelIPorcaoVenenosa;
+import zoid.itens.gandalf.views.ItensMagicosJFrame;
 
 public class ControladorPorcaoVenenosa {
-    private JFrameiItemsMagicos viewItems;
+    private ItensMagicosJFrame viewItems;
     private ControllerBancoPorcaoVenenosa bancoGANDALF;
         
     public void executar(){
-        viewItems = new JFrameiItemsMagicos();
+        viewItems = new ItensMagicosJFrame();
         viewItems.addInsereListener(new InsereListener());
         viewItems.addLeBancoListener(new LeBancoListener());
         viewItems.addInsereBancoListener(new InsereBancoListener());

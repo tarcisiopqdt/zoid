@@ -7,7 +7,9 @@ package zoid;
 
 import zoid.elros.GerenteZoid;
 import zoid.elros.GerenteZoidV1;
+import zoid.itens.gandalf.controllers.ControladorEspadaFogo;
 import zoid.itens.gandalf.controllers.ControladorPorcaoVenenosa;
+import zoid.itens.gandalf.views.ItensMagicosJFrame;
 
 
 /**
@@ -24,6 +26,9 @@ public class Zoid {
         gz.iniciarZoid();      
         ControladorPorcaoVenenosa  cc = new ControladorPorcaoVenenosa();
         cc.executar();
+        ControladorEspadaFogo ef = new ControladorEspadaFogo();
+        ef.executar();
+   
     }
     
 }
